@@ -254,6 +254,17 @@
                .highlight{color:#009dff}
                .highlight02{color:#ff2400}
 
+               .Bar{position:fixed;right:30px;top:50%;transform:translateY(-50%);width:60px;height:70vh;z-index:9999;display:flex;pointer-events:none;font-family:'Courier New',monospace}
+               .Bar-num{display:flex;flex-direction:column;justify-content:space-between;align-items:flex-end;padding-right:5px;color:#888888;font-size:10px;font-weight:bold;width:30px}
+               .Bar-ruler{width:10px;border-right:1px solid #555555;background-image:linear-gradient(to bottom,#888888 1px,transparent 1px);background-size:100% 2%}.Bar-track{width:8px;background:#111111;border:1px solid #444444;margin-left:2px;position:relative;overflow:visible}
+               .Bar-fill{width:100%;background:#CCCCCC;position:absolute;top:0;left:0;box-shadow:0 0 8px #AAAAAA;transform-origin:top;animation:grow auto linear;animation-timeline:scroll(root)}
+               .Bar-arrow{position:absolute;left:-12px;width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:8px solid #CCCCCC;filter:drop-shadow(0 0 3px #CCCCCC);transform:translateY(-50%);animation:move auto linear;animation-timeline:scroll(root)}
+               @keyframes grow{0%{height:0%}100%{height:100%}}
+               @keyframes move{0%{top:0%}100%{top:100%}}
+
+               @keyframes grow{0%{height:0%}100%{height:100%}}
+               @keyframes move{0%{top:0%}100%{top:100%}}
+
                #bg-layer {position: absolute;top: 0; left: 0; width: 100%;z-index: -100; overflow: hidden;}
                   #bg-layer img {width: 100%; height: auto; display:block; will-change: transform;}
         
@@ -274,9 +285,16 @@
 
 
                 @keyframes appear{from{opacity:0; clip-path: inset(0 0 100% 100%);} to{opacity:1; clip-path: inset(0 0 0 0);;}}
+
+               .SideLine{position:fixed;right:80px;top:50%;transform:translateY(-50%);height:70vh;width:20px;display:flex;flex-direction:column;justify-content:space-between;align-items:center;z-index:9000;pointer-events:none;font-family:'Courier New',monospace;opacity:0.5}.SideLine-text{writing-mode:vertical-rl;text-orientation:mixed;color:#DDDDDD;font-size:10px;letter-spacing:2px;font-weight:bold;text-shadow:0 0 3px #FFFFFF4D}.SideLine-bar{width:1px;flex-grow:1;background:linear-gradient(to bottom,transparent,#AAAAAA,#AAAAAA,transparent);margin:15px 0}.SideLine-deco{width:6px;height:6px;border:1px solid #DDDDDD;background:transparent;box-shadow:0 0 4px #DDDDDD}
+               .Top-Bar{position:fixed;top:0;left:0;width:100%;height:50px;background:#000;display:flex;align-items:center;padding:0 30px;z-index:10000;border-bottom:1px solid rgba(255,255,255,0.15);box-sizing:border-box}
+               .Top-Logo{height:30px;width:auto;display:block}
+               .Top-Title{color:#fff;margin:0 0 0 auto;font-size:20px;font-weight:bold}
+
         </style>
 </head>
 <body>
+   <header class="Top-Bar"><img src="Palantir logo01.png" alt="Palantir Logo" class="Top-Logo"><h2 class="Top-Title">팔란티어 알아보기</h2></header>
     <div id="bg-layer">
         <img src="01.webp">
     </div>
@@ -295,11 +313,11 @@
         </section>
 
         <section style="margin-top:300px; background: url(PBG01); background-size:cover;background-attachment:fixed; height: 700px" class="kingwrap">
-                <div class="free wrap01-3">
+                <div class="free wrap01-3 ">
                         <img src="df.webp" style="width:110%">
                 </div>
                             <div class="wrap03A">
-                                <h2 style="color:black; margin:5px; border-bottom: solid #5c5c5c 1px; padding-bottom:10px ">
+                                <h2 style="color:black; margin:5px; border-bottom: solid #5c5c5c 1px; padding-bottom:10px " >
                                  <span class="highlight">팔란티어</span> 모두가 주목하는 이유
                                 </h2>
                                 <p style="color: black">
@@ -579,4 +597,9 @@
             </div>
         </div>
     </section>
+    <div class="Bar"><div class="Bar-num"><span>00</span><span>25</span><span>50</span><span>75</span><span>100</span></div>
+    <div class="Bar-ruler"></div><div class="Bar-track">
+   <div class="Bar-fill"></div><div class="Bar-arrow"></div></div></div>
+
+   <div class="SideLine"><div class="SideLine-deco"></div><div class="SideLine-bar"></div><div class="SideLine-text">SYS.OP.READY :: SECURE CONN :: PALANTIR.OS.V2.5</div><div class="SideLine-bar"></div><div class="SideLine-deco"></div></div>
 </body>
